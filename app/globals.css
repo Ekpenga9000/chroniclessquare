@@ -15,7 +15,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+/* 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,6 +24,42 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.tester{
+  border: 1px solid red;
+}
+
+.container-custom {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container-custom {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container-custom {
+    max-width: 80vw;
+  }
+}
+@media (min-width: 1024px) {
+  .container-custom {
+    max-width: 70vw;
+  }
+}
+@media (min-width: 1280px) {
+  .container-custom {
+    max-width: 70vw;
+  }
+}
+
+.h-80 {
+  height: 80vh;
+}
+
+.h-50 {
+  height: 50vh;
 }
 
 @layer utilities {
