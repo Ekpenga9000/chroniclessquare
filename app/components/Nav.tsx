@@ -4,7 +4,7 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <header className="flex justify-center items-center bg-purple-600">
-      <nav className="flex container-custom justify-between p-4">
+      <nav className="flex container-custom justify-between p-4 bg-gray-900 border-b-1 border-white/20">
         <Link href={"/"} className="font-semibold text-white">ChroniclesSquare</Link>
         <div className="flex gap-4 text-white">
           <Link href={"/profile"}>Profile</Link>

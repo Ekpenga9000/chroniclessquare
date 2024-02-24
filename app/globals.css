@@ -26,9 +26,6 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-.tester{
-  border: 1px solid red;
-}
 
 .container-custom {
   width: 100%;
@@ -54,8 +51,19 @@ body {
   }
 }
 
+.tester{
+  border: 1px solid red;
+}
+
+.border-b-1 {
+  border-bottom-width: 1px;
+}
 .h-80 {
   height: 80vh;
+}
+
+.w-80 {
+  width: 80vw;
 }
 
 .h-50 {
