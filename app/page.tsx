@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Feed from "./components/Feed";
-import PopularTags from "./components/PopularTags";
-import Search from "./components/Search";
+import Feed from "../components/Feed";
+import PopularTags from "../components/PopularTags";
+import Search from "../components/Search";
 
 export default function Home() {
   return (

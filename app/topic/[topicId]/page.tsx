@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import PopularTags from "@app/components/PopularTags";
-import CodeSnippet from "@app/components/CodeSnippet";
-import Content from "@app/components/Content";
+import PopularTags from "@components/PopularTags";
+import CodeSnippet from "@components/CodeSnippet";
+import Content from "@components/Content";
 import { randomizeColor, getFirstLetter } from "@app/utils/utils";
 
 const page = () => {
