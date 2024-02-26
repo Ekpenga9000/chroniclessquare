@@ -9,7 +9,11 @@ const Feed = () => {
     const [feedItems, setFeedItems] = useState<FeedItemProps[] | null>(null);
 
     useEffect(() => {
-        setFeedItems(data);
+      setFeedItems(data.map(item => ({
+        ...item,
+        creatorId: item.creatorId.toString(), // Convert creatorId to string
+        topicId: item.topicId.toString() // Convert topicId to string
+      })));
     }, []);
 
   return (

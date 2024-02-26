@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { GiMountainClimbing } from "react-icons/gi";
 import { FaMountainSun } from "react-icons/fa6";
 const Nav = () => {
   return (
