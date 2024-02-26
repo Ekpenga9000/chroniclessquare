@@ -4,11 +4,14 @@ import Link from "next/link";
 import PopularTags from "@app/components/PopularTags";
 import CodeSnippet from "@app/components/CodeSnippet";
 import Content from "@app/components/Content";
+import { randomizeColor, getFirstLetter } from "@app/utils/utils";
 
 
 const page = () => {
   const [isVoted, setIsVoted] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
+    
+    const creatorId = "1234";
 
   const handleToggleState = (arg: boolean, func: Function) => {
     func(!arg);
@@ -24,13 +27,13 @@ const page = () => {
           </h1>
           <div className="flex items-center pl-5 gap-2">
             <Link
-              href={"/profile"}
-              className="bg-purple-600 text-lg md:text-2xl px-3 py-1.5 rounded-md text-white font-semibold"
+                          href={"/profile"}
+                          className={`${randomizeColor()} text-lg md:text-2xl px-3 py-1.5 rounded-md text-white font-semibold`}
             >
               C
             </Link>
             <div className="my-4">
-              <Link href={"/profile"}>
+              <Link href={`/profile/${creatorId}`}>
                 <address className="text-gray-300 hover:text-white">
                   coder123
                 </address>

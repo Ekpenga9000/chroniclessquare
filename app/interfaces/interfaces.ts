@@ -16,3 +16,16 @@ export interface PopularTagsProps {
 export interface CodeSnippetProps {
     code: string;
 }
+
+export interface ProfileProps {
+    username: string;
+    profession: string;
+    bio: string;
+    links?: {
+        website?: string;
+        github?: string;
+        twitter?: string;
+        linkedin?: string;
+        coffee?: string;
+    } | null;
+}

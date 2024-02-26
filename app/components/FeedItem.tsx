@@ -1,22 +1,10 @@
 "use client";
 import Link from "next/link";
 import { FeedItemProps } from "@app/interfaces/interfaces"; 
-
+import { getFirstLetter, randomizeColor } from "@app/utils/utils";
 
 const FeedItem = (props: FeedItemProps) => {
     const {creatorId, topicId, topic, upvotes, username, datePosted } = props;
-
-    const getFirstLetter = (name:string): string => {
-        return name.charAt(0).toLocaleUpperCase();
-    }
-    //create a function to randomize the background color and text color of the Icon
-    const randomizeColor = () => {
-        const colors = ["bg-purple-600", "bg-blue-600","bg-sky-600", "bg-teal-600", "bg-yellow-600", "bg-red-600", "bg-pink-600", "bg-green-600", "bg-indigo-600", "bg-orange-600"];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        return randomColor;
-    }
-
-    //create a function to format the date
 
   return (
     <div className="flex items-center gap-4 shadow-sm w-full rounded-sm px-4 py-3">
