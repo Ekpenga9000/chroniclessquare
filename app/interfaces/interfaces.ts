@@ -18,10 +18,11 @@ export interface CodeSnippetProps {
 }
 
 export interface ProfileProps {
+    personal: boolean;
     username: string;
     profession: string;
     bio: string;
-    links?: {
+    links: {
         website?: string;
         github?: string;
         twitter?: string;

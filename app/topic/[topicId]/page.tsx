@@ -6,12 +6,12 @@ import CodeSnippet from "@app/components/CodeSnippet";
 import Content from "@app/components/Content";
 import { randomizeColor, getFirstLetter } from "@app/utils/utils";
 
-
 const page = () => {
   const [isVoted, setIsVoted] = useState(false);
-    const [isBookmarked, setIsBookmarked] = useState(false);
-    
-    const creatorId = "1234";
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const creatorId = "1234";
+  const topicId = "1234";
 
   const handleToggleState = (arg: boolean, func: Function) => {
     func(!arg);
@@ -25,10 +25,10 @@ const page = () => {
             Configuring MySql with Prisma ORM and TypeScript for a Next.js
             Application.
           </h1>
-          <div className="flex items-center pl-5 gap-2">
+          <div className="flex items-center pl-5 gap-2 relative">
             <Link
-                          href={"/profile"}
-                          className={`${randomizeColor()} text-lg md:text-2xl px-3 py-1.5 rounded-md text-white font-semibold`}
+              href={"/profile"}
+              className={`${randomizeColor()} text-lg md:text-2xl px-3 py-1.5 rounded-md text-white font-semibold`}
             >
               C
             </Link>
@@ -39,6 +39,14 @@ const page = () => {
                 </address>
               </Link>
               <span className="text-sm text-gray-500">Mar, 23 2024</span>
+            </div>
+            <div className="absolute right-4">
+              <Link href={`/topic/edit/${topicId}`} className="text-2xl mx-4 text-gray-300">
+                <i className="bx bx-edit-alt"></i>
+              </Link>
+              <span className="text-gray-300 cursor-pointer text-2xl">
+                <i className="bx bx-trash"></i>
+              </span>
             </div>
           </div>
           <div className="flex items-center gap-2 border border-y border-gray-500 py-1 pl-4 relative">
@@ -97,7 +105,7 @@ const page = () => {
           </div>
         </div>
         <div className="p-4 md:px-8">
-         <Content/>
+          <Content />
           <CodeSnippet
             code={`
     <div>

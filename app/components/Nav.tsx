@@ -9,7 +9,7 @@ const Nav = () => {
         <Link href={"/"} className="font-semibold text-white flex items-center"><span className="text-purple-600 inline-block mr-1"><FaMountainSun /></span> Chronicles<span className="text-purple-600">Square</span></Link>
         <div className="flex gap-4 text-white">
           <Link href={"/profile"}>Profile</Link>
-          <Link href={"/create"}>Create</Link>
+          <Link href={"/topic/create"}><i className='bx bx-plus' ></i> Create</Link>
         </div>
       </nav>
     </header>

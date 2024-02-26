@@ -1,14 +1,14 @@
-import Feed from '@app/components/Feed'
-import Profile from '@app/components/Profile'
-import React from 'react'
+import React from 'react';
+import Feed from '@app/components/Feed';
+import Profile from '@app/components/Profile';
 
 const page = () => {
   return (
-      <section className='flex justify-center bg-purple-700'>
+    <section className='flex justify-center bg-purple-700'>
           <div className='container-custom flex flex-col lg:flex-row bg-gray-900 relative'>
               <div className='p-4 lg:w-1/4 lg:sticky top-0'>
                   <Profile
-                        personal= {false}
+                        personal= {true}
                         username='coder123'
                         profession='Fullstack Developer'
                         bio='I am a fullstack developer with 5 years of experience. I love to code and build new things.'
