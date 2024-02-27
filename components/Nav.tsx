@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaMountainSun } from "react-icons/fa6";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@app/utils/auth";
+import LogoutButton from "./LogoutButton";
 
 const Nav = async () => {
   const session = await getServerSession(authOptions);
@@ -23,6 +24,7 @@ const Nav = async () => {
             <Link href={"/topic/create"} className="text-sm">
               <i className="bx bx-plus"></i> Create
             </Link>
+            <LogoutButton />
           </div>
         ) : (
           <Link href={"/profile/login"} className="text-sm text-white">
