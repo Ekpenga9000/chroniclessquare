@@ -1,17 +1,20 @@
 "use client";
 import { useState } from "react";
-import { Editor } from "@monaco-editor/react";
 import CodeInput from "./CodeInput";
 import TextInput from "./TextInput";
 import TitleInput from "./TitleInput";
+import { ContentDetails } from "../app/interfaces/interfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const TopicForm = () => {
-  const [code, setCode] = useState<string | undefined>("");
+  const {content} = useSelector((state: RootState) => state.article.value);
   const [isOptionVisible, setIsOptionVisible] = useState(false);
   const [isTextEditor, setIsTextEditor] = useState(true);
   const [isCodeEditor, setIsCodeEditor] = useState(false);
-  const [title, setTitle] = useState("");
+  // const [content, setContent] = useState<ContentDetails[]>([]);
 
+  //content = [{type: 'text', value: 'some text'}, {type: 'code', value: 'some code'}];
   const handleCodeEditor = () => {
     setIsTextEditor(false);
     setIsOptionVisible(false);
@@ -27,6 +30,16 @@ const TopicForm = () => {
     <div className="w-full lg:w-1/2 pt-4">
       <h1 className="text-4xl font-bold mb-8">Create a new topic</h1>
       <TitleInput />
+      <div>
+        {content.map((obj, i) => {
+          if (obj.type === "text") {
+            return <div key={i}>{obj.value}</div>;
+          } else {
+            return <pre key={i}>{obj.value}</pre>;
+          }
+        })}
+      </div>
+
       <div className="flex items-start gap-2 relative">
         <div>
           <button
@@ -57,9 +70,7 @@ const TopicForm = () => {
             </ul>
           ) : null}
         </div>
-        {isTextEditor && (
-          <TextInput />
-        )}
+        {isTextEditor && <TextInput />}
         {isCodeEditor && <CodeInput />}
       </div>
       <div className="flex justify-end">

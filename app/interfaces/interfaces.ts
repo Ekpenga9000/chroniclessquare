@@ -30,3 +30,9 @@ export interface ProfileProps {
         coffee?: string;
     } | null;
 }
+
+export interface ContentDetails{
+    // id: string;
+    type: string;
+    value: string;
+}

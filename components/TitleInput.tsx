@@ -1,29 +1,25 @@
 "use strict";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../redux/store";
+import { addTitle } from "@redux/slices/articleSlice";
 
 const TitleInput = () => {
-    const hasTitle = localStorage.getItem("title");
-  const [title, setTitle] = useState("");
+  const dispatch = useDispatch();
+  const { title } = useSelector((state: RootState) => state.article.value);
+  const [formTitle, setFormTitle] = useState(title);
   const [titleValue, setTitleValue] = useState("");
-  const [formActivated, setFormActivated] = useState(hasTitle ? false : true);
-
-  useEffect(() => {
-    const titleValue = localStorage.getItem("title");
-    if (titleValue) {
-      setTitleValue(titleValue);
-    }
-  }, []);
+  const [formActivated, setFormActivated] = useState(title ? false : true);
 
   const handleSumit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!title.trim()) return;
-    localStorage.setItem("title", title);
-    setTitleValue(title);
+    if (!formTitle.trim()) return;
+    dispatch(addTitle(formTitle));
+    setTitleValue(formTitle);
     setFormActivated(false);
   };
 
   const handleEdit = () => {
-    setTitle(localStorage.getItem("title") || "");
     setFormActivated(true);
   };
   return (
@@ -36,8 +32,8 @@ const TitleInput = () => {
           <textarea
             id="title"
             name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={formTitle}
+            onChange={(e) => setFormTitle(e.target.value)}
             className="p-2 rounded-md bg-transparent outline-none text-2xl w-full fleex-wrap"
             placeholder="Title ..."
           ></textarea>
@@ -54,7 +50,7 @@ const TitleInput = () => {
             className="bx bxs-edit-alt text-gray-400 hover:text-gray-600"
             onClick={handleEdit}
           ></i>
-          <h1 className="text-3xl font-bold ml-2 mb-4">{titleValue}</h1>
+          <h2 className="text-3xl font-bold ml-2 mb-4">{titleValue}</h2>
         </div>
       ) : null}
     </>
