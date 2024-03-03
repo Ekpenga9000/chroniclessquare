@@ -21,7 +21,7 @@ const Nav = async () => {
               <i className="bx bx-user"></i>
               {session.user?.name ?? "Profile"}
             </Link>
-            <Link href={"/topic/create"} className="text-sm">
+            <Link href={"/topic/new"} className="text-sm">
               <i className="bx bx-plus"></i> Create
             </Link>
             <LogoutButton />

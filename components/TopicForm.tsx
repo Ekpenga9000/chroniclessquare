@@ -35,7 +35,7 @@ const TopicForm = () => {
           if (obj.type === "text") {
             return <div key={i}>{obj.value}</div>;
           } else {
-            return <pre key={i}>{obj.value}</pre>;
+            return <pre key={i}><code className="language-javascript">{obj.value}</code></pre>;
           }
         })}
       </div>
