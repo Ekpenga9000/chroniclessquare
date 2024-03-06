@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import PopularTags from "@components/PopularTags";
-import CodeSnippet from "@components/CodeSnippet";
 import Content from "@components/Content";
 import { randomizeColor, getFirstLetter } from "@app/utils/utils";
 
@@ -106,14 +105,6 @@ const page = () => {
         </div>
         <div className="p-4 md:px-8">
           <Content />
-          <CodeSnippet
-            code={`
-    <div>
-      <h1>Code Snippet Example</h1>
-      <CodeSnippet code={codeExample} />
-    </div>
-    `}
-          />
         </div>
       </div>
     </section>
