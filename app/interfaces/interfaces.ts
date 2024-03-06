@@ -1,4 +1,5 @@
 // Objective: Define the interfaces for the components and services in the app
+
 export interface FeedItemProps {
     creatorId: string;
     topicId: string;

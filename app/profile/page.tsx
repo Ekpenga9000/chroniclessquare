@@ -4,7 +4,7 @@ import Profile from "@components/Profile";
 
 const page = () => {
   return (
-    <section className="flex justify-center bg-purple-700">
+    <section className="flex justify-center bg-white">
       <div className="container-custom flex flex-col lg:flex-row bg-gray-900 relative">
         <div className="p-4 lg:w-1/4 lg:sticky top-0">
           <Profile

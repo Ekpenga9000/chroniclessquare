@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <section>
-      <div className="flex gap-4 justify-center bg-purple-700">
+      <div className="flex gap-4 justify-center bg-white">
         <div className="container-custom h-50 flex flex-col justify-center p-4 bg-gray-900">
           <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
             Developer Solutions Hub

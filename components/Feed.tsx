@@ -17,7 +17,7 @@ const Feed = () => {
     }, []);
 
   return (
-    <section className="flex justify-center bg-purple-700">
+    <section className="flex justify-center bg-white">
           <div className="container-custom min-h-50 shadow-md bg-slate-50 p-4">
               {!feedItems ? <div>No topics found</div> : feedItems.map((item) => { 
                   return <FeedItem key={item.topicId} {...item} />

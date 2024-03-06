@@ -18,7 +18,7 @@ const page = () => {
   };
 
   return (
-    <section className="flex justify-center bg-purple-700">
+    <section className="flex justify-center bg-white">
       <div className="container-custom min-h-50 shadow-md bg-slate-50">
         <div className="bg-gray-900 text-white">
           <h1 className="text-white text-2xl md:text-4xl word-break font-semibold md:font-bold mb-4 md:mb-8 p-4">

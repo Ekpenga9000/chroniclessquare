@@ -9,7 +9,7 @@ const Nav = async () => {
   const session = await getServerSession(authOptions);
 
   return (
-    <header className="flex justify-center items-center bg-purple-700">
+    <header className="flex justify-center items-center bg-white">
       <nav className="flex container-custom justify-between p-4 bg-gray-900 border-b-1 border-white/20">
         <Link href={"/"} className="font-semibold text-white flex items-center">
           <i className="bx bxs-landscape text-purple-600 inline-block mr-1 text-lg"></i>{" "}

@@ -25,19 +25,13 @@ export default function RootLayout({
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tomorrow-night-blue.min.css"
-        />
       </head>
       <body className={inter.className}>
-        <main>
+        <main id="example">
           <Nav />
           {children}
           <Toaster />
         </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-        <script>hljs.highjlightAll()</script>
       </body>
     </html>
   );
