@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/Nav";
+import { getServerSession } from "next-auth";
 import { Toaster } from "@components/ui/toaster";
-
+import Provider from "@components/Provider";
+import { authOptions } from "@app/utils/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,11 +15,12 @@ export const metadata: Metadata = {
     "A repository of how to's and tutorials for web development, software engineering, and more.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession(authOptions);
   return (
     <html lang="en">
       <head>
@@ -27,11 +30,13 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <Provider session={session}>
         <main id="example">
           <Nav />
           {children}
           <Toaster />
         </main>
+        </Provider>
       </body>
     </html>
   );

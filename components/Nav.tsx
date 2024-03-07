@@ -1,16 +1,16 @@
-import React from "react";
 import Link from "next/link";
-import { FaMountainSun } from "react-icons/fa6";
 import { getServerSession } from "next-auth";
-import { useSession } from "next-auth/react";
 import { authOptions } from "@app/utils/auth";
 import LogoutButton from "./LogoutButton";
+import { get } from "http";
 
-const Nav = async () => {
+const Nav = async() => {
   const session = await getServerSession(authOptions);
 
-  console.log("Session", session);
-  
+  if (session) {
+    console.log("session", session);
+  }
+
   return (
     <header className="flex justify-center items-center bg-white">
       <nav className="flex container-custom justify-between p-4 bg-gray-900 border-b-1 border-white/20">

@@ -7,33 +7,33 @@ import { toast } from "@components/ui/use-toast";
 
 const SignInForm = () => {
   const [email, setEmail] = useState<string | null>(null);
-  
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!email) {
-        return toast({
-            title: "Email is required.",
-            description: "Please enter your email.",
-            variant: "destructive",
-        });
-      }
+    e.preventDefault();
+    if (!email) {
+      return toast({
+        title: "Email is required.",
+        description: "Please enter your email.",
+        variant: "destructive",
+      });
+    }
     const signInResult = await signIn("email", {
-        email,
-        callbackUrl: `${window.location.origin}`,
-        redirect: false,
+      email,
+      callbackUrl: `${window.location.origin}`,
+      redirect: false,
     });
     if (!signInResult?.ok) {
-        return toast({
-            title: "There was an error.",
-            description: "An error occurred while signing in.",
-            variant: "destructive",
-        });
-      }
-      
-        return toast({
-            title: "Check your email.",
-            description: "A sign in link has been sent to your email.",
-        });
+      return toast({
+        title: "There was an error.",
+        description: "An error occurred while signing in.",
+        variant: "destructive",
+      });
+    }
+
+    return toast({
+      title: "Check your email.",
+      description: "A sign in link has been sent to your email.",
+    });
   };
 
   return (
@@ -73,7 +73,6 @@ const SignInForm = () => {
       >
         <i className="bx bx-home-alt-2"></i> Back to home
       </Link>
-
     </div>
   );
 };
