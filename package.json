@@ -31,6 +31,7 @@
     "editorjs-change-case": "^0.0.3",
     "editorjs-text-alignment-blocktune": "^1.0.3",
     "editorjs-text-color-plugin": "^2.0.4",
+    "express": "^4.18.3",
     "lucide-react": "^0.341.0",
     "next": "14.1.0",
     "next-auth": "^4.24.6",

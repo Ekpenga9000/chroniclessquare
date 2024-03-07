@@ -44,7 +44,15 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  facebook      String?
+  twitter      String?
+  instagram      String?
+  buyMeACoffee      String?
+  youtube      String?
+  medium      String?
+  Github      String?
 }
+
 
 model VerificationToken {
   identifier String
